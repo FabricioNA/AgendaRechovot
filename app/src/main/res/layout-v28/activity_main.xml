@@ -140,8 +140,9 @@
 
     <ImageButton
         android:id="@+id/VerlistAprov"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
         android:background="@color/white"
         android:clickable="true"
         android:contentDescription="@string/app_name"
@@ -150,12 +151,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="1dp"
+        app:layout_constraintVertical_bias="0.996"
         app:maxImageSize="56dp"
         app:srcCompat="@drawable/visit_templates_svgrepo_com"
         tools:ignore="ContentDescription" />
@@ -194,6 +193,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintVertical_bias="0.996" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
