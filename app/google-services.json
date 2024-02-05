@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "480325944176",
+    "firebase_url": "https://agendarechovot-default-rtdb.firebaseio.com",
+    "project_id": "agendarechovot",
+    "storage_bucket": "agendarechovot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480325944176:android:9b88f22ecc99abfb2085b5",
+        "android_client_info": {
+          "package_name": "com.example.agendarechovot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHUdoAPt4tSnS3zi1eWg4DSTfyuUOLCcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/listImage"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/visit_templates_svgrepo_com"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:id="@+id/cpf"
+            android:text="CPF"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/listImage"
+            android:layout_marginLeft="10dp"/>
+        
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:id="@+id/data"
+            android:text="Data"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/listImage"
+            android:layout_below="@id/cpf"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/like_button_icon"
+            android:id="@+id/likebtn"
+            android:background="@drawable/circle_button_background"
+            android:layout_toEndOf="@id/data"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="70dp">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/dislikebtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/dislike_button_icon"
+            android:background="@drawable/circle_button_background"
+            android:layout_toEndOf="@id/likebtn"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="5dp">
+        </ImageButton>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:id="@+id/seAprovado"
+            android:text="SeAprovado"
+            android:textSize="17sp"
+            android:layout_toEndOf="@id/cpf"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="35dp"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
