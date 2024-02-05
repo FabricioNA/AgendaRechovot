@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -13,7 +14,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.agendarechovot.ModelsAdapter.Util.ConfigBD;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,6 +29,7 @@ import java.util.Random;
 
 public class MenuPrincipal extends AppCompatActivity {
 
+    private FirebaseAuth auth;
     private EditText editTextDate, editTextCPF;
     String seaprovado = "Reprovado";
 
@@ -35,6 +39,8 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.BlueIsrael));
         Objects.requireNonNull(getSupportActionBar()).hide();
+
+        auth = ConfigBD.FirebaseAuthentication();
 
         editTextDate = findViewById(R.id.editTextDate);
         Button agendeVisita = findViewById(R.id.AgendaVisita);
@@ -143,5 +149,13 @@ public class MenuPrincipal extends AppCompatActivity {
 
         // Show the DatePickerDialog
         datePickerDialog.show();
+    }
+    public void logout(View view){
+        try {
+            auth.signOut();
+            finish();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

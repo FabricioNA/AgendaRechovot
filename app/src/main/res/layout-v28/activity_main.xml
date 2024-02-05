@@ -8,17 +8,58 @@
     android:background="@drawable/background_menu"
     tools:context=".MenuPrincipal">
 
-    <TextView
+    <ImageView
         android:id="@+id/Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="סדר יום רחובות"
-        android:textSize="34sp"
+        android:layout_marginEnd="132dp"
+        android:importantForAccessibility="no"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/logo_rechovot__1_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Logout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <ImageButton
+        android:id="@+id/Logout"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="#00FF0000"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:focusable="true"
+        android:onClick="logout"
+        android:scaleType="centerInside"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.082"
+        app:maxImageSize="56dp"
+        app:srcCompat="@drawable/logout_svgrepo_com"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Membros"
+        android:gravity="bottom|center|right"
+        android:drawableLeft="@drawable/person_3_fill_svgrepo_com"
+        app:layout_constraintVertical_bias="0.526"
+        tools:ignore="HardcodedText" />
+
 
     <EditText
         android:id="@+id/editTextDate"
@@ -58,10 +99,10 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        app:layout_constraintVertical_bias="0.167"
+        app:layout_constraintVertical_bias="0.032"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -75,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCPF"
-        app:layout_constraintVertical_bias="0.028"
+        app:layout_constraintVertical_bias="0.002"
         tools:ignore="HardcodedText" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -104,7 +145,6 @@
         android:background="@color/white"
         android:clickable="true"
         android:contentDescription="@string/app_name"
-        android:elevation="0.1dp"
         android:focusable="true"
         android:scaleType="centerInside"
         android:textAlignment="center"
@@ -127,7 +167,6 @@
         android:background="@color/white"
         android:clickable="true"
         android:contentDescription="@string/app_name"
-        android:elevation="0.1dp"
         android:focusable="true"
         android:scaleType="centerInside"
         android:textAlignment="center"
@@ -137,10 +176,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="1dp"
         app:maxImageSize="56dp"
-        app:srcCompat="@drawable/users"
+        app:srcCompat="@drawable/person_fill_svgrepo_com"
         tools:ignore="ContentDescription" />
 
     <View
@@ -149,6 +188,7 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:background="#FFFFFF"
+        android:elevation="-0.01dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
