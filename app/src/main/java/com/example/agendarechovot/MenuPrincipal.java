@@ -154,6 +154,7 @@ public class MenuPrincipal extends AppCompatActivity {
         try {
             auth.signOut();
             finish();
+            Toast.makeText(MenuPrincipal.this, "Logout feito com sucesso!", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
             e.printStackTrace();
         }

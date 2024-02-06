@@ -2,7 +2,7 @@ package com.example.agendarechovot.ModelsAdapter;
 
 public class UserModel {
 
-    private String nomeCompleto, cpf, senha;
+    private String nomeCompleto, email, telephone, cpf, senha;
 
     public UserModel() {
     }
@@ -13,6 +13,22 @@ public class UserModel {
 
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     public String getCpf() {
