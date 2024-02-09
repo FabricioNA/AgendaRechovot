@@ -10,4 +10,6 @@
     <color name="BlueIsrael">#567DA4</color>
     <color name="BlueIsrael2">#003c85</color>
     <color name="gray">#A3A3A3</color>
+    <color name="green">#3BDD17</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

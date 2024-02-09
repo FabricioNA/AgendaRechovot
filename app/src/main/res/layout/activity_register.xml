@@ -9,10 +9,11 @@
     android:gravity="center"
     tools:context=".RegisterActivity">
 
-    <androidx.cardview.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
+        android:scrollbars="none"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
         
@@ -100,6 +101,37 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:id="@+id/endereco_cadastro"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Endereço"
+                android:maxLength="80"
+                android:singleLine="true"
+                android:paddingStart="15dp"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/cep_cadastro"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="CEP"
+                android:maxLength="8"
+                android:singleLine="true"
+                android:numeric="integer"
+                android:paddingStart="15dp"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:id="@+id/senha_cadastro"
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="20dp"
@@ -152,5 +184,5 @@
                 android:textSize="18sp"/>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 </LinearLayout>
