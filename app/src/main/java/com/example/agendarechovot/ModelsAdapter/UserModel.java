@@ -4,7 +4,7 @@ import android.net.Uri;
 
 public class UserModel {
 
-    private String nomeCompleto, email, telephone, endereco, cep, cpf, senha, key;
+    private String nomeCompleto, email, telephone, endereco, cep, cpf, senha, key, sinceDate;
     private Uri foto;
 
     public UserModel() {
@@ -85,4 +85,8 @@ public class UserModel {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getSinceDate() { return sinceDate;}
+
+    public void setSinceDate(String sinceDate) { this.sinceDate = sinceDate;}
 }

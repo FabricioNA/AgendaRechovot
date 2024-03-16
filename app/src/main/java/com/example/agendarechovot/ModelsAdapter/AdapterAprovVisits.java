@@ -15,14 +15,14 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainAdapter extends FirebaseRecyclerAdapter<VisitModel,MainAdapter.myViewHolder> {
+public class AdapterAprovVisits extends FirebaseRecyclerAdapter<VisitModel, AdapterAprovVisits.myViewHolder> {
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      */
-    public MainAdapter(@NonNull FirebaseRecyclerOptions<VisitModel> options) {
+    public AdapterAprovVisits(@NonNull FirebaseRecyclerOptions<VisitModel> options) {
         super(options);
     }
 
@@ -47,7 +47,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<VisitModel,MainAdapter.
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.customlistview,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_aprov_visits,parent,false);
         return new myViewHolder(view);
     }
 

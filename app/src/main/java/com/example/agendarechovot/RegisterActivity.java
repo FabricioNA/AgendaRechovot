@@ -42,7 +42,10 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -53,7 +56,9 @@ public class RegisterActivity extends AppCompatActivity {
     Button galeria, cadastrar_ft;
     private Uri imageUri;
     ProgressBar progressBar;
-    public String key;
+    public String key, sinceDate;
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", new Locale("pt", "BR"));
+
     final private DatabaseReference databaseReference = FirebaseDatabase.getInstance()
             .getReference("Usuarios");
     final private StorageReference storageReference = FirebaseStorage.getInstance().getReference();
@@ -89,6 +94,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String cep = cep_cad.getText().toString().trim();
                 String senha = senha_cad.getText().toString().trim();
                 String senhaRe = senhaRe_cad.getText().toString().trim();
+                Date dateNow = new Date() ;
+                sinceDate = sdf.format(dateNow);
 
                 if (user.isEmpty()) {
                     nomeComp_cad.setError("Nome não prenchido");
@@ -124,6 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                     usuarioCad.setEndereco(endereco);
                     usuarioCad.setCep(cep);
                     usuarioCad.setSenha(senha);
+                    usuarioCad.setSinceDate(sinceDate);
 
                     showModalPhoto();
                 }
@@ -207,7 +215,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void InsertUserToDB(String nomeCompleto, String email, String telephone, String cpf, String endereco, String cep, String foto) {
+    private void InsertUserToDB(String nomeCompleto, String email, String telephone, String cpf, String endereco, String cep, String foto, String sinceDate) {
         HashMap<String, Object> lineHashmap = new HashMap<>();
         lineHashmap.put("USERNAME", nomeCompleto);
         lineHashmap.put("EMAIL", email);
@@ -216,6 +224,7 @@ public class RegisterActivity extends AppCompatActivity {
         lineHashmap.put("ENDERECO", endereco);
         lineHashmap.put("CEP", cep);
         lineHashmap.put("FOTO", foto);
+        lineHashmap.put("SINCEDATE", sinceDate);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference lineRef = database.getReference("Usuarios");
@@ -246,7 +255,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         InsertUserToDB(usuarioCad.getNomeCompleto(),usuarioCad.getEmail(),usuarioCad.getTelephone(),
-                                usuarioCad.getCpf(), usuarioCad.getEndereco(), usuarioCad.getCep(), uri.toString());
+                                usuarioCad.getCpf(), usuarioCad.getEndereco(), usuarioCad.getCep(), uri.toString(), sinceDate);
                         progressBar.setVisibility(View.VISIBLE);
                         Toast.makeText(RegisterActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                         finish();

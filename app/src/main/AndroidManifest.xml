@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AgendaRechovot"
         tools:targetApi="32">
         <activity
+            android:name=".TodosMembrosActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -29,10 +32,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AprovVisits"
+            android:name=".AprovVisitsActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".MenuPrincipalActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

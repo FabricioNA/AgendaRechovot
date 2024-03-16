@@ -16,15 +16,11 @@ import android.widget.Toast;
 import com.example.agendarechovot.ModelsAdapter.UserModel;
 import com.example.agendarechovot.ModelsAdapter.Util.ConfigBD;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
@@ -71,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(LoginActivity.this, "Login feito com sucesso!", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(LoginActivity.this, MenuPrincipal.class));
+                                    startActivity(new Intent(LoginActivity.this, MenuPrincipalActivity.class));
                                 } else {
                                     String exc;
 
@@ -112,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser usuarioAuth = auth.getCurrentUser();
         if (usuarioAuth != null){
-            startActivity(new Intent(LoginActivity.this, MenuPrincipal.class));
+            startActivity(new Intent(LoginActivity.this, MenuPrincipalActivity.class));
         }
     }
 }
